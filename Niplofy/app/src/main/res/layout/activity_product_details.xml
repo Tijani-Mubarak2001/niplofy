@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ProductDetailsActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_product_details_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/app_gradient_color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.adewale.niplofy.utils.MSPTextViewBold
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="@dimen/toolbar_title_paddingStart"
+            android:paddingEnd="0dp"
+            android:text="@string/title_product_details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/toolbar_title_text_size"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_product_details_activity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_product_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/product_detail_image_height"
+                android:background="@color/colorImageViewBackground"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_product_details_title_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/app_gradient_color_background"
+                android:orientation="vertical"
+                android:padding="@dimen/product_details_title_price_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_product_detail_image">
+
+                <LinearLayout
+                android:id="@+id/ll_product_safety_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_product_detail_image">
+                    <ImageButton
+                        android:id="@+id/safety_tips_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/content_description"
+                        android:padding="@dimen/delete_icon_padding"
+                        android:src="@drawable/ic_safety_tip_vector"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <com.adewale.niplofy.utils.MSPTextView
+                        android:id="@+id/tv_terms_condition"
+                        android:layout_width="wrap_content"
+                        android:paddingTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/txt_terms_condition_marginStart"
+                        android:text="@string/product_warning"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="@dimen/product_details_price_textSize"
+                        />
+                </LinearLayout>
+
+
+                <com.adewale.niplofy.utils.MSPTextViewBold
+                    android:id="@+id/tv_product_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/DeepBlue"
+                    android:textSize="@dimen/product_details_title_textSize"
+                    tools:text="Product Title" />
+
+                <com.adewale.niplofy.utils.MSPTextView
+                    android:id="@+id/tv_product_details_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/item_value_text_color"
+                    android:textSize="@dimen/product_details_price_textSize"
+                    tools:text="$100" />
+
+            </LinearLayout>
+
+            <com.adewale.niplofy.utils.MSPTextViewBold
+                android:id="@+id/tv_product_details_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/product_details_label_margin"
+                android:text="@string/lbl_product_description"
+                android:textColor="@color/DeepBlue"
+                android:textSize="@dimen/product_details_label_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_product_details_title_price" />
+
+            <com.adewale.niplofy.utils.MSPTextView
+                android:id="@+id/tv_product_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/product_details_label_margin"
+                android:layout_marginEnd="@dimen/product_details_label_margin"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/product_details_description_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_details_label"
+                tools:text="This is product details description." />
+
+            <com.adewale.niplofy.utils.MSPTextViewBold
+                android:id="@+id/tv_address_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/product_details_label_margin"
+                android:text="@string/lbl_product_address_description"
+                android:textColor="@color/DeepBlue"
+                android:textSize="@dimen/product_details_label_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_details_description" />
+
+            <com.adewale.niplofy.utils.MSPTextView
+                android:id="@+id/tv_product_address_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/product_details_label_margin"
+                android:layout_marginEnd="@dimen/product_details_label_margin"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/product_details_description_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address_label"
+                tools:text="This is the seller's Address" />
+
+            <com.adewale.niplofy.utils.MSPTextViewBold
+                android:id="@+id/tv_Phone_number_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/product_details_label_margin"
+                android:text="@string/lbl_product_Phone_number_description"
+                android:textColor="@color/DeepBlue"
+                android:textSize="@dimen/product_details_label_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_address_description" />
+
+            <com.adewale.niplofy.utils.MSPTextView
+                android:id="@+id/tv_product_Phone_number_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/product_details_label_margin"
+                android:layout_marginEnd="@dimen/product_details_label_margin"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/product_details_description_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Phone_number_label"
+                tools:text="This is the Phone Number" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_product_details_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/product_details_label_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_Phone_number_description">
+
+                <com.adewale.niplofy.utils.MSPTextViewBold
+                    android:id="@+id/tv_product_details_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:text="@string/lbl_product_details_stock_quantity"
+                    android:textColor="@color/DeepBlue"
+                    android:textSize="@dimen/product_details_label_textSize" />
+
+                <com.adewale.niplofy.utils.MSPTextView
+                    android:id="@+id/tv_product_details_available_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_grey_border_background"
+                    android:paddingStart="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:paddingTop="@dimen/product_details_stock_quantity_paddingTopBottom"
+                    android:paddingEnd="@dimen/product_details_stock_quantity_paddingStartEnd"
+                    android:paddingBottom="@dimen/product_details_stock_quantity_paddingTopBottom"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="@dimen/product_details_stock_quantity_textSize"
+                    android:textStyle="bold"
+                    tools:text="5" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_product_buttons_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/product_details_title_price_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_product_details_quantity">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:paddingRight="5dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:id="@+id/phone_call"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="0"
+                        android:layout_height="wrap_content"
+                        android:background="@color/call_background"
+                        android:contentDescription="@string/content_description"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="@dimen/delete_icon_padding"
+                        android:src="@drawable/ic_phone_call_icon" />
+                    <com.adewale.niplofy.utils.MSPTextView
+                        android:id="@+id/tv_phone_description_number"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="6dp"
+                        android:text="@string/lbl_phone_number"
+                        android:textColor="@color/call_background"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/mail_to"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="0"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:contentDescription="@string/content_description"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="@dimen/delete_icon_padding"
+                        android:src="@drawable/ic_mail_icon" />
+                    <com.adewale.niplofy.utils.MSPTextView
+                        android:id="@+id/tv_email_description_address"
+                        android:layout_width="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="6dp"
+                        android:text="@string/lbl_phone_number"
+                        android:textColor="@color/call_background"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--START-->
+            <com.adewale.niplofy.utils.MSPButton
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingTop="@dimen/btn_padding"
+                android:paddingBottom="@dimen/btn_padding"
+                android:text="@string/btn_lbl_add_to_cart"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/btn_textSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_product_buttons_contact"
+                tools:visibility="visible" />
+            <!--END-->
+
+            <com.adewale.niplofy.utils.MSPButton
+                android:id="@+id/btn_go_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingTop="@dimen/btn_padding"
+                android:paddingBottom="@dimen/btn_padding"
+                android:text="@string/btn_lbl_go_to_cart"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/btn_textSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_to_cart"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
